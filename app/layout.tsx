@@ -3,9 +3,36 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
+  metadataBase: new URL('https://stickyscalerc.com'),
+  title: 'Custom RC Vinyl Wraps for X-Maxx & Traxxas | Sticky Scale RC',
+  description:
+    'Premium vinyl wraps for the Traxxas X-Maxx and other RC trucks. Bold, dominant graphics built to stand out. Shop KingCat wraps at Sticky Scale RC.',
   generator: 'v0.app',
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    type: 'website',
+    url: 'https://stickyscalerc.com',
+    siteName: 'Sticky Scale RC',
+    title: 'Sticky Scale RC | Premium RC Graphics That Dominate',
+    description:
+      'Custom vinyl wraps for the Traxxas X-Maxx and other RC trucks. Bold, dominant graphics built to stand out.',
+    images: [
+      {
+        url: 'https://stickyscalerc.com/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Sticky Scale RC premium vinyl wraps',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Custom RC Vinyl Wraps for X-Maxx & Traxxas | Sticky Scale RC',
+    description:
+      'Premium vinyl wraps for the Traxxas X-Maxx and other RC trucks. Bold, dominant graphics built to stand out. Shop KingCat wraps at Sticky Scale RC.',
+  },
   icons: {
     icon: [
       {
@@ -39,8 +66,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className="antialiased">
+    <html lang="en" className="bg-black">
+      <body className="antialiased bg-black">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
