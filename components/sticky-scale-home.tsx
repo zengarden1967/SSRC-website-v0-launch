@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { MobileNav } from '@/components/mobile-nav'
+import { MobileFooter } from '@/components/mobile-footer'
 
 type Hotspot = {
   label: string
@@ -210,6 +211,8 @@ export function StickyScaleHome() {
       </main>
 
       <footer>
+        <MobileFooter />
+        <div className="hidden md:block">
         <ImageSection
           src="/site/11-footer.png"
           alt="StickyScale RC. Custom vinyl wraps for RC vehicles. Printed to order, ships in 5 to 7 business days. Free shipping on orders over $125. Contact support@stickyscalerc.com. StickyScale RC is not affiliated with Traxxas."
@@ -217,6 +220,7 @@ export function StickyScaleHome() {
           height={386}
           hotspots={footerHotspots}
         />
+        </div>
       </footer>
     </div>
   )
