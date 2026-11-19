@@ -1,6 +1,13 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
+import { Barlow_Semi_Condensed } from 'next/font/google'
 import './globals.css'
+
+const barlowSemiCondensed = Barlow_Semi_Condensed({
+  subsets: ['latin'],
+  weight: '700',
+  variable: '--font-barlow-semi-condensed',
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://stickyscalerc.com'),
@@ -48,7 +55,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="bg-background">
+    <html lang="en" className={`${barlowSemiCondensed.variable} bg-background`}>
       <body className="antialiased bg-background">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}

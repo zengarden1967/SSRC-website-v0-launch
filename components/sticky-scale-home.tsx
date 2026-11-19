@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { MobileNav } from '@/components/mobile-nav'
 
 type Hotspot = {
   label: string
@@ -112,6 +113,10 @@ const products = [
 export function StickyScaleHome() {
   return (
     <div id="top" className="mx-auto flex w-full max-w-3xl flex-col bg-background">
+      <MobileNav
+        links={navHotspots.map(({ label, href }) => ({ label, href }))}
+        cartHref="#shop"
+      />
       <header className="flex flex-col">
         <h1 className="sr-only">StickyScale RC: vinyl wraps that dominate</h1>
         <div className="flex">
@@ -134,7 +139,7 @@ export function StickyScaleHome() {
             />
           </div>
         </div>
-        <nav aria-label="Main">
+        <nav aria-label="Main" className="hidden md:block">
           <ImageSection
             src="/site/03-nav-bar.png"
             alt="Home, Shop, 3D Cockpits, Remote Wraps, About, Contact"
