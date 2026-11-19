@@ -36,8 +36,8 @@ function ImageSection({
         width={width}
         height={height}
         priority={priority}
-        sizes="(max-width: 772px) 100vw, 772px"
-        className="block h-auto w-full"
+  sizes="(max-width: 772px) 100vw, 772px"
+  className="block h-auto w-full max-w-full"
       />
       {hotspots.map((spot) => (
         <a
@@ -113,7 +113,7 @@ const products = [
 
 export function StickyScaleHome() {
   return (
-    <div id="top" className="mx-auto flex w-full max-w-3xl flex-col bg-background">
+    <div id="top" className="mx-auto flex w-full max-w-3xl flex-col bg-background max-md:overflow-x-hidden">
       <MobileNav
         links={navHotspots.map(({ label, href }) => ({ label, href }))}
         cartHref="#shop"

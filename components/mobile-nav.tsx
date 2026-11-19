@@ -109,7 +109,7 @@ export function MobileNav({
           <nav aria-label="Mobile" className="flex flex-1 flex-col justify-center px-8 pb-10">
             <ul className="flex flex-col">
               {links.map((link) => (
-                <li key={link.label} className="border-b border-primary">
+                <li key={link.label} className="border-b-2 border-solid border-[#fd9804]">
                   <a
                     href={link.href}
                     onClick={close}
