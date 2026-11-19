@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import Image from 'next/image'
 import { Menu, ShoppingCart, X } from 'lucide-react'
 
 export type NavLink = { label: string; href: string }
@@ -42,7 +43,17 @@ export function MobileNav({
 
   return (
     <div className="sticky top-0 z-40 md:hidden">
-      <div className="flex items-center justify-end gap-2 bg-background px-3 py-1">
+      <div className="flex items-center justify-between gap-2 border-b-2 border-primary bg-background px-3 py-1.5">
+        <a href="#top" aria-label="StickyScale RC home" className="flex shrink-0">
+          <Image
+            src="/site/logo-on-black.png"
+            alt=""
+            width={420}
+            height={142}
+            priority
+            className="h-12 w-auto"
+          />
+        </a>
         <div className="flex items-center gap-1">
           <a
             href={cartHref}

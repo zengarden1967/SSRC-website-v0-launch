@@ -119,7 +119,16 @@ export function StickyScaleHome() {
       />
       <header className="flex flex-col">
         <h1 className="sr-only">StickyScale RC: vinyl wraps that dominate</h1>
-        <div className="flex">
+        <div className="md:hidden">
+          <ImageSection
+            src="/site/02-header-free-shipping.png"
+            alt="Free shipping on orders over $125"
+            width={386}
+            height={137}
+            priority
+          />
+        </div>
+        <div className="hidden md:flex">
           <div className="w-1/2">
             <ImageSection
               src="/site/01-header-logo.png"
