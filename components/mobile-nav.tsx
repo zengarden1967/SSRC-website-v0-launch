@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
 import { Menu, ShoppingCart, X } from 'lucide-react'
 
@@ -43,19 +42,7 @@ export function MobileNav({
 
   return (
     <div className="sticky top-0 z-40 md:hidden">
-      <div className="flex items-center justify-between gap-2 bg-background px-3 py-1">
-        <a href="#top" aria-label="StickyScale RC home" className="flex shrink-0">
-          <Image
-            src="/site/01-header-logo.png"
-            alt=""
-            width={386}
-            height={137}
-            priority
-            sizes="152px"
-            className="h-14 w-auto"
-          />
-        </a>
-
+      <div className="flex items-center justify-end gap-2 bg-background px-3 py-1">
         <div className="flex items-center gap-1">
           <a
             href={cartHref}
