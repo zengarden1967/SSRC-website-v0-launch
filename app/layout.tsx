@@ -33,22 +33,6 @@ export const metadata: Metadata = {
     description:
       'Premium vinyl wraps for the Traxxas X-Maxx and other RC trucks. Bold, dominant graphics built to stand out. Shop KingCat wraps at Sticky Scale RC.',
   },
-  icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-  },
 }
 
 export const viewport: Viewport = {
