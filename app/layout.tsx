@@ -1,6 +1,13 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
+import { Barlow_Semi_Condensed } from 'next/font/google'
 import './globals.css'
+
+const barlowSemiCondensed = Barlow_Semi_Condensed({
+  subsets: ['latin'],
+  weight: '700',
+  variable: '--font-barlow-semi-condensed',
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://stickyscalerc.com'),
@@ -33,22 +40,6 @@ export const metadata: Metadata = {
     description:
       'Premium vinyl wraps for the Traxxas X-Maxx and other RC trucks. Bold, dominant graphics built to stand out. Shop KingCat wraps at Sticky Scale RC.',
   },
-  icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-  },
 }
 
 export const viewport: Viewport = {
@@ -64,7 +55,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="bg-background">
+    <html lang="en" className={`${barlowSemiCondensed.variable} bg-background`}>
       <body className="antialiased bg-background">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}

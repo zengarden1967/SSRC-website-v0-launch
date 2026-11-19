@@ -1,4 +1,6 @@
 import Image from 'next/image'
+import { MobileNav } from '@/components/mobile-nav'
+import { MobileFooter } from '@/components/mobile-footer'
 
 type Hotspot = {
   label: string
@@ -34,8 +36,8 @@ function ImageSection({
         width={width}
         height={height}
         priority={priority}
-        sizes="(max-width: 772px) 100vw, 772px"
-        className="block h-auto w-full"
+  sizes="(max-width: 772px) 100vw, 772px"
+  className="block h-auto w-full max-w-full"
       />
       {hotspots.map((spot) => (
         <a
@@ -111,10 +113,29 @@ const products = [
 
 export function StickyScaleHome() {
   return (
-    <div id="top" className="mx-auto flex w-full max-w-3xl flex-col bg-background">
+    <div id="top" className="mx-auto flex w-full max-w-3xl flex-col bg-background max-md:overflow-x-hidden">
+      <MobileNav
+        links={navHotspots.map(({ label, href }) => ({ label, href }))}
+        cartHref="#shop"
+      />
       <header className="flex flex-col">
         <h1 className="sr-only">StickyScale RC: vinyl wraps that dominate</h1>
-        <div className="flex">
+  <div className="relative md:hidden">
+  <Image
+  src="/site/mobile-banner-1170x217.png"
+  alt="Free shipping on orders over $125"
+  width={1170}
+  height={217}
+  sizes="100vw"
+  priority
+  className="block h-auto w-full"
+  />
+  <div
+  aria-hidden="true"
+  className="pointer-events-none absolute inset-x-0 bottom-0 h-3 bg-gradient-to-b from-transparent to-[#000]"
+  />
+  </div>
+        <div className="hidden md:flex">
           <div className="w-1/2">
             <ImageSection
               src="/site/01-header-logo.png"
@@ -134,7 +155,7 @@ export function StickyScaleHome() {
             />
           </div>
         </div>
-        <nav aria-label="Main">
+        <nav aria-label="Main" className="hidden md:block">
           <ImageSection
             src="/site/03-nav-bar.png"
             alt="Home, Shop, 3D Cockpits, Remote Wraps, About, Contact"
@@ -190,6 +211,8 @@ export function StickyScaleHome() {
       </main>
 
       <footer>
+        <MobileFooter />
+        <div className="hidden md:block">
         <ImageSection
           src="/site/11-footer.png"
           alt="StickyScale RC. Custom vinyl wraps for RC vehicles. Printed to order, ships in 5 to 7 business days. Free shipping on orders over $125. Contact support@stickyscalerc.com. StickyScale RC is not affiliated with Traxxas."
@@ -197,6 +220,7 @@ export function StickyScaleHome() {
           height={386}
           hotspots={footerHotspots}
         />
+        </div>
       </footer>
     </div>
   )
