@@ -1,5 +1,3 @@
-import Image from 'next/image'
-
 type FooterLink = { label: string; href: string }
 
 const SUPPORT_EMAIL = 'support@stickyscalerc.com'
@@ -56,16 +54,8 @@ const bottomLinks: FooterLink[] = [
 
 export function MobileFooter() {
   return (
-    <div className="flex flex-col gap-8 bg-background px-4 pb-8 pt-8 text-foreground md:hidden">
+    <div className="flex flex-col gap-8 bg-background px-4 pb-8 pt-6 text-foreground md:hidden">
       <div className="flex flex-col items-start gap-3">
-        <Image
-          src="/site/logo-on-black.png"
-          alt=""
-          width={420}
-          height={142}
-          sizes="200px"
-          className="block h-auto w-48"
-        />
         <p className="font-menu text-2xl font-bold uppercase leading-none">StickyScale RC</p>
         <p className="text-pretty text-[0.9375rem] leading-relaxed text-foreground/80">
           Custom vinyl wraps for RC vehicles. Printed to order. Ships in 5 to 7 business days.
